@@ -17,7 +17,10 @@ var arr = [10,20,30];
   Return the first item in the given array.
 */
 
-//Code Here
+function first(arr)
+{
+  return arr[0];
+}
 
 
 
@@ -32,7 +35,10 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-//Code Here
+function last(arr)
+{
+  return arr[arr.length -1];
+}
 
 
 
@@ -47,8 +53,13 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
   Loop through the given array and alert every item in the array.
 */
 
-//Code Here
-
+function looper(family)
+{
+  for(let i=0; i<family.length; i++)
+  {
+    alert(family[i]);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -62,8 +73,13 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Loop through the given array backwards alerting every item in the array starting at the end.\
 */
 
-//Code Here
-
+function reversedLooper(letters)
+{
+  for(let i=letters.length-1; i>=0; i--)
+  {
+    alert(letters[i]);
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -77,12 +93,10 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return an array that contains the even numbers from the nums array.
 */
 
-//Code Here
-
-
-
-
-
+function evenFinder(nums)
+{
+  return nums.filter(even => even%2 === 0);
+}
 
 
 /////////////////////// EXTRA PRACTICE PROBLEMS BELOW ////////////////////
@@ -105,9 +119,15 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   Have divider return an Array with the first item in the array being the evens array (all the even values from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function oddFinder(nums)
+{
+  return nums.filter(even => even%2 === 1);
+}
 
-
+function divider(numbersArray)
+{
+  return [evenFinder(numbersArray), oddFinder(numbersArray)];
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -126,8 +146,11 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
-
+function finder(arr)
+{
+  let marlonRando = getRandomArbitrary();
+  return arr.includes(marlonRando);
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -155,9 +178,27 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+function removeItem(myGroceryList, item)
+{
+  if(myGroceryList && item)
+    return myGroceryList.filter(stuff => !myGroceryList.includes(stuff));
+  else
+    return [];
+}
 
+function addItem(myGroceryList, item)
+{
+  if(myGroceryList && item && !myGroceryList.includes(item))
+  {
+    myGroceryList.push(item)
+    return myGroceryList;
+  }
+  else
+    return [];
+}
 
+// let myGroceryList = ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky']
+// console.log(removeItem(myGroceryList, "pizza"));
 
 ////////// PROBLEM 9 //////////
 
@@ -165,7 +206,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+function maker()
+{
+  let arr = []
+  for(let i=0; i<=215; i++)
+    arr.push[i];
+  return arr;
+}
 
 
 
