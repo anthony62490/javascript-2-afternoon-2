@@ -181,7 +181,16 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 function removeItem(myGroceryList, item)
 {
   if(myGroceryList && item)
-    return myGroceryList.filter(stuff => !myGroceryList.includes(stuff));
+  {
+    if(myGroceryList.includes(item))
+    {
+      let i = myGroceryList.indexOf(item);
+      myGroceryList.splice(i, 1);
+      return myGroceryList;
+    }
+    else
+      return myGroceryList;
+  }
   else
     return [];
 }
@@ -209,8 +218,8 @@ function addItem(myGroceryList, item)
 function maker()
 {
   let arr = []
-  for(let i=0; i<=215; i++)
-    arr.push[i];
+  for(let i=1; i<=215; i++)
+    arr.push(i);
   return arr;
 }
 
@@ -228,7 +237,10 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
+function addTen(numbers)
+{
+  return numbers.map(plus => Number(plus) + 10);
+}
 
 
 
@@ -253,7 +265,13 @@ for(var i = 0; i < num2; i++){
   Return the array which is longest.
 */
 
-//Code Here
+function longer(arr1, arr2)
+{
+  if(arr1.length >= arr2.length)
+    return arr1;
+  else
+    return arr2;
+}
 
 
 
@@ -265,8 +283,16 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
-
+function both(arr1, arr2)
+{
+  let newArr = [];
+  for(let i=0; i<arr1.length; i++)
+  {
+    if(arr2.includes(arr1[i]))
+      newArr.push(arr1[i]);
+  }
+  return newArr;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -305,7 +331,11 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+devMountainEmployees.push(tyler);
+devMountainEmployees.push(cahlan);
+devMountainEmployees.push(ryan);
+devMountainEmployees.push(colt);
+console.log(devMountainEmployees);
 
 
 
@@ -314,8 +344,14 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
-
+for(let i=0; i<devMountainEmployees.length; i++)
+{
+  let cutHere = devMountainEmployees.indexOf(cahlan);
+  if(devMountainEmployees[i] === cahlan)
+  {
+    devMountainEmployees.splice(cutHere, 1);
+  }
+}
 
 
 ////////// PROBLEM 13 //////////
@@ -326,8 +362,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
-
+let users = []
 
 
 /*
@@ -345,7 +380,25 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+users.push(user1);
+users.push
+(
+  {
+    name: 'Mylar McGinnis',
+    email: 'tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniteLoop'
+  }
+)
+users.push
+(
+  {
+    name: 'BranDaar McGinnis',
+    email: 'tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniteLoop'
+  }
+)
 
 
 
@@ -359,9 +412,11 @@ var user1 = {
   Once you find the particular index he's located in, delete him from the array.
 */
 
-//Code Here
-
-
+for(let i=0; i<users.length; i++)
+{
+  if(users[i].name === 'Tyler McGinnis')
+    users.splice(i, 1);
+}
 
 /*
   The activity we just did is very much how data works in 'the real world'.
